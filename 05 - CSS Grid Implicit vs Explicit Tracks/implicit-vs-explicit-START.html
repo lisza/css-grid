@@ -14,11 +14,29 @@
     <div class="item">2</div>
     <div class="item">3</div>
     <div class="item">4</div>
+    <div class="item">5</div>
+    <div class="item">6</div>
+    <div class="item">7</div>
+    <div class="item">8</div>
   </div>
 
   <style>
+  /* We explicitly defined columns, but not rows. So the rows will be
+  computed implicitly. With four items and two explicit columns, the rows
+  will wrap onto the second line.
+
+  Rows that aren't explicitly defined, computed implicit rows will be
+  sized by content. Alternatively, can use grid-auto-rows: 500px; to
+  dfine a height for implicit rows. */
     .container {
       display: grid;
+      grid-gap: 20px;
+      grid-template-columns: 200px 400px;
+      grid-template-rows: 100px 100px;
+      grid-auto-rows: 100px 400px;
+      /* But how do you get auto columns? Use auto-flow? */
+      grid-auto-columns: 100px 400px;
+
     }
   </style>
 </body>
