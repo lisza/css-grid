@@ -31,6 +31,9 @@
     .container {
       display: grid;
       grid-gap: 20px;
+      grid-template-columns: 100px repeat(2, 1fr auto) 200px;
+      /* repeat function repeats whatever we tell it as a second argument
+      n times. Can mix and match with absolute defined values, or auto */
     }
   </style>
 </body>
