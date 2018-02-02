@@ -21,7 +21,17 @@
       display: grid;
       grid-gap: 20px;
       border: 10px solid var(--yellow);
-      grid-template-columns: repeat(auto-fit, 150px);
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+
+      /* Will wrap around given min and max values if itmes don't fit
+      in one row anymore.
+      Auto-fit with minmax stretches items to whole available width.
+      Auto-fill won't go beyond their auot size/content-size.
+      Can use instead of media queries sometimes... */
+
+      /* grid-template-columns: fit-content(100px) 150px 150px 150px; */
+      /* fit-content takes a clamp value as a max width or height.
+      Not too useful, says Wes Bos, but might come in handy every once in a while */
     }
   </style>
 </body>
