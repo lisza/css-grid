@@ -10,6 +10,7 @@
 
 <body>
   <div class="container">
+    <!-- .item.item${$}*70 -->
     <div class="item item1">1</div>
     <div class="item item2">2</div>
     <div class="item item3">3</div>
@@ -86,7 +87,34 @@
     .container {
       display: grid;
       grid-gap: 20px;
+      grid-template-columns: repeat(10, 1fr);
+      /* Fit rest items in empty spots with auto-flow-dense */
+      /* Grid will layout the items with specific placing first, then fill
+      up the rest with unspecific items */
+      grid-auto-flow: dense;
     }
+
+  /* Apply different size/style to every 6th item */
+  .item:nth-child(6n) {
+    background: cornflowerblue;
+    grid-column: span 6;
+  }
+
+  /* HINT: nth-child is more specific than directly selecting item8 e.g.,
+  so it will get precendence over other styles. */
+  .item:nth-child(8n) {
+    background: tomato;
+    grid-column: span 2;
+  }
+
+  .item:nth-child(9n) {
+    background: limegreen;
+    grid-row: span 2;
+  }
+
+
+
+
   </style>
 </body>
 
