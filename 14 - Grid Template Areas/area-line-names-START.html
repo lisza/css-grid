@@ -10,6 +10,7 @@
 
 <body>
   <div class="container">
+    <!-- .item.item${$}*30 -->
     <div class="item item1">1</div>
     <div class="item item2">2</div>
     <div class="item item3">3</div>
@@ -46,7 +47,21 @@
     .container {
       display: grid;
       grid-gap: 20px;
+      grid-template-areas:
+        "🐅 🐅 🐅 🐅 🦏 🦏 🦏 🦏"
+        "🐅 🐅 🐅 🐅 🦏 🦏 🦏 🦏"
+        "🐅 🐅 🐅 🐅 🦏 🦏 🦏 🦏"
+        "🐅 🐅 🐅 🐅 🦏 🦏 🦏 🦏"
     }
+
+    /* Can use names instead of line numbers with -start/-end tacked onto
+    yr grid template area name */
+    .item3 {
+      /* grid-area: 🐅; */
+      grid-column: 🐅-start / 🐅-end;
+      grid-row: 🐅-start / 🐅-end;
+    }
+
   </style>
 </body>
 
