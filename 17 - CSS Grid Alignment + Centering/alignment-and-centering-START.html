@@ -10,6 +10,7 @@
 
 <body>
   <div class="container">
+    <!-- .itm.itm${$}*40 -->
     <div class="itm itm1">1</div>
     <div class="itm itm2">2</div>
     <div class="itm itm3">3</div>
@@ -60,8 +61,11 @@
       justify-content:
       align-content:
 
+
       align-self:
       justify-self:
+      Use to override other grid container defaults by directly putting
+      justify-self on the grid item
 
       justify-* is row axis
       align-* is column axis
@@ -70,8 +74,28 @@
     .container {
       display: grid;
       grid-gap: 20px;
-      grid-template-columns: repeat(10, 1fr);
+      border: 5px solid var(--yellow);
+      grid-template-columns: repeat(5, 100px);
+      grid-template-rows: repeat(5, 100px);
+      /* They stretch by default */
+      /* justify-items: stretch; */
+      /* align-items: stretch; */
+      /* Or shorthand "place-items". CAUTION! Use prefixer with that
+      cos it's new, e.g. https://github.com/postcss/autoprefixer */
+      place-items: center center;
+      place-items: stretch stretch;
+
+      /* gives auto-padding to the whole grid content if the grid
+      container is bigger than the grid content. Useful if you used
+      hard pixel values (or em units) for your columns rather than fr */
+      /* justify-content: center; */
+      justify-content: space-around;
     }
+
+    .itm {
+      background: white;
+    }
+
   </style>
 </body>
 
