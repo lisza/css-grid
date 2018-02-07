@@ -21,7 +21,28 @@
     .container {
       display: grid;
       grid-gap: 20px;
+      grid-template-columns: repeat(10, 1fr);
     }
+
+    /* Default order property is 0 */
+    /* CAUTION: messes up screen reader order, cos it won't recognize
+    the css order */
+
+    .logo {
+      grid-column: span 2;
+      order: 2;
+    }
+
+    .nav {
+      grid-column: span 8;
+      order: 1;
+    }
+
+    .content {
+      grid-column: 1 / -1;
+      order: 3;
+    }
+
   </style>
 </body>
 
