@@ -97,6 +97,30 @@
 
 
   <style>
+  /* Nested grids: .albums is outer grid, .album inner grid w 2 columns */
+    .albums {
+      display: grid;
+      grid-gap: 20px;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
+
+    .album {
+      background: rgba(255, 255, 255, 0.2);
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+      padding: 20px;
+      display: grid;
+      grid-gap: 10px;
+      grid-template-columns: 150px 1fr;
+      align-items: center;
+      color: white;
+      font-weight: 100;
+    }
+
+    /* Scales down the images to 100% of the surrounding box */
+    .album__artwork {
+      width: 100%;
+    }
+
   </style>
 </body>
 
