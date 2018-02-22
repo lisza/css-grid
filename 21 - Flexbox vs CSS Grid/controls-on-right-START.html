@@ -55,7 +55,14 @@
       background: white;
       padding: 10px;
       border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-auto-flow: column;
     }
+
+    /* grid-auto-flow: column; means that all additional grid items beyond
+    the columns specified by grid-template-columns, will be floated/flowed
+    as columns next to the one explicit column. Default value is "row". */
   </style>
 </body>
 
